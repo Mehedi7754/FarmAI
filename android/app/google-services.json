@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "322918131033",
+    "project_id": "farmai-a46e3",
+    "storage_bucket": "farmai-a46e3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322918131033:android:34475d18186ff011d6d848",
+        "android_client_info": {
+          "package_name": "com.example.farmai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322918131033-oh74crj6llok5cof1v5gm4idaq38duu7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc3Kp4yzHaC6QV5tMSbulGqRhP6Isr5YY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "322918131033-oh74crj6llok5cof1v5gm4idaq38duu7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
