@@ -58,32 +58,39 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Moved Slider slightly down
-            const SizedBox(height: 16),
+      body: RefreshIndicator(
+        color: Colors.green.shade700,
+        onRefresh: () async {
+          final newsProvider = Provider.of<NewsProvider>(context, listen: false);
+          await newsProvider.fetchNews();
+        },
+        child: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Moved Slider slightly down
+              const SizedBox(height: 16),
 
-            // News Section Heading
-            const _SectionHeader(title: 'সর্বশেষ সংবাদ'),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: NewsSlider(),
-            ),
+              // News Section Heading
+              const _SectionHeader(title: 'সর্বশেষ সংবাদ'),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: NewsSlider(),
+              ),
 
-            const SizedBox(height: 12),
+              const SizedBox(height: 12),
 
-            // Features Heading
-            const _SectionHeader(title: 'আমাদের সেবাসমূহ'),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: FeatureGrid(),
-            ),
+              // Features Heading
+              const _SectionHeader(title: 'আমাদের সেবাসমূহ'),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: FeatureGrid(),
+              ),
             
-            const SizedBox(height: 40),
-          ],
+              const SizedBox(height: 40),
+            ],
+          ),
         ),
       ),
     );
